@@ -5,6 +5,57 @@
 
 using namespace std;
 
+static list_t hash_test1() {
+  list_t hash_list1 = list_make();
+  list_t empty_list = list_make();
+
+  std::string input;
+  getline(std::cin, input, ' ');
+  std::istringstream ss(input);
+  int temp;
+
+  while (ss >> temp) {
+    list_t temp_list = list_make(temp, empty_list);
+    hash_list1 = insert_list(temp_list, hash_list1, 0);
+  }
+
+  list_print(hash_list1);
+  return empty_list;
+}
+
+int main() {
+  hash_test();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 list_t subtract(list_t, list_t, list_t);
 
 class HashTest {
@@ -52,3 +103,5 @@ int main() {
   list_print(diff);
   cout << endl;
 }
+
+*/
