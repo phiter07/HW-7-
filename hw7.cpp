@@ -23,21 +23,31 @@ int main () {
 
   std::cout<< "New user hash input: ";
   userInput(input);
+
   std::cout << "Old user hash output: ";
   userInput(output);
+
   std::cout << "New user hash keys: ";
   list_print(newHash);
+  std::cout << "\n";
+
   std::cout << "Difference: ";
   list_print(difference);
+  std::cout << "\n";
 
   std::cout << "New user hash input 2: ";
   userInput(input2);
+
   std::cout << "Old user hash output 2: ";
   userInput(output2);
+
   std::cout << "New user hash keys 2: ";
   list_print(newHash2);
+  std::cout << "\n";
+  
   std::cout << "Difference 2: ";
   list_print(difference2);
+  std:: cout << "\n";
 
   int collision = countCollisions(newHash);
   int oldCol = countCollisions(output);
@@ -45,7 +55,7 @@ int main () {
   int oldCol2 = countCollisions(output2);
   std::cout << "---Collision Count---" << "\n";
   std::cout << "--Hash #1--" << "\n";
-  std::cout << "new_code: " << col << "\n";
+  std::cout << "new_code: " << collision << "\n";
   std::cout << "old_code: " << oldCol << "\n";
   std::cout << "--Hash #2--" << "\n";
   std::cout << "new_code: " << col2 << "\n";

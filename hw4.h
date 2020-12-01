@@ -90,7 +90,7 @@ list_t rotate(list_t list, unsigned int n);
     // For example, rotate(( 1, 2, 3, 4, 5), 2) yields ( 3, 4, 5, 1, 2 )
     */
 
-list_t InsertListHelper(list_t first, list_t second, unsigned int n);
+// list_t InsertListHelper(list_t first, list_t second, unsigned int n);
     /*
     // REQUIRES: n <= the number of elements in first
     // EFFECTS: returns a list comprising the first n elements of

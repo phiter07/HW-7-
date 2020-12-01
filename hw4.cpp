@@ -243,15 +243,15 @@ list_t filter_even(list_t list) {
 }
 
 // *************
-list_t InsertListHelper(list_t first, list_t second, unsigned int n, list_t new_list) {
+list_t insertHelper(list_t first, list_t second, unsigned int n, list_t new_list) {
   if (n==0) {
     return append(reverse(new_list), append(second, first));
   }
-  return InsertListHelper(list_rest(first), second, n-1, list_make(list_first(first),new_list));
+  return insertHelper(list_rest(first), second, n-1, list_make(list_first(first),new_list));
 }
 
 list_t insert_list(list_t first, list_t second, unsigned int n) {
-  return InsertListHelper(first, second, n, list_make());
+  return insertHelper(first, second, n, list_make());
 }
 
 // *************
