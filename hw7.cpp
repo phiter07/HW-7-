@@ -1,8 +1,89 @@
-#include<iostream>
-#include "recursive.h"
+#include <iostream>
+#include <sstream>
+//#include "recursive.h"
 #include "hw4.h"
-#include <unordered_map> 
+#include <unordered_set> 
 
+void userInput (list_t &list);
+list_t hashOne (list_t list);
+list_t hashTwo (list_t list);
+list_t subtractOneTwo(list_t list_1, list_t list_2);
+bool isPrime(int num);
+int countCollisions(list_t list);
+
+int main () {
+  list_t input = list_make();
+  list_t output = list_make();
+  list_t newHash = hashOne(input);
+  list_t difference = subtractOneTwo(newHash, output);
+  list_t input2 = list_make();
+  list_t output2 = list_make();
+  list_t newHash2 = hashTwo(input2);
+  list_t difference2 = subtractOneTwo(newHash2, output2);
+
+  std::cout<< "New user hash input: ";
+  userInput(input);
+  std::cout << "Old user hash output: ";
+  userInput(output);
+  std::cout << "New user hash keys: ";
+  list_print(newHash);
+  std::cout << "Difference: ";
+  list_print(difference);
+
+  std::cout << "New user hash input 2: ";
+  userInput(input2);
+  std::cout << "Old user hash output 2: ";
+  userInput(output2);
+  std::cout << "New user hash keys 2: ";
+  list_print(newHash2);
+  std::cout << "Difference 2: ";
+  list_print(difference2);
+
+
+}
+// * * * * * F U N C T I O N S * * * * *
+
+void userInput (list_t &list) {
+  std::string input = "";
+  int num = 0;
+  getline(std::cin, input);
+  std::istringstream iss(input);
+  while (iss >> num) {
+    list = list_make(num,list);
+  }
+  list = reverse(list);
+}
+
+list_t hashOne(list_t list) {
+  list_t newHashList = list_make ();
+  int sumList = sum(list);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 using namespace std;
 
 
@@ -70,3 +151,4 @@ int main() {
 
 
 }
+*/

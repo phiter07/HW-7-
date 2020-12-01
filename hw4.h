@@ -3,14 +3,14 @@
 
 #include "recursive.h"
 
-int sumHelper(list_t list);
+//int sumHelper(list_t list);
 int sum(list_t list);
     /* 
     // EFFECTS: returns the sum of each element in list
     //          zero if the list is empty.
     */ 
 
-int productHelper(list_t list);
+//int productHelper(list_t list);
 int product(list_t list);
     /* 
     // EFFECTS: returns the product of each element in list
@@ -39,20 +39,19 @@ int accumulate(list_t list, int (*fn)(int, int), int identity);
     */ 
 
 list_t reverse(list_t list);
-list_t reverse(list_t list);
     /*
     // EFFECTS: returns the reverse of list
     //
     // For example: the reverse of ( 3 2 1 ) is ( 1 2 3 )
     */
 
-list_t appendHelper(list_t first, list_t second);
+//list_t appendHelper(list_t first, list_t second);
 list_t append(list_t first, list_t second);
     /*
     // EFFECTS: returns the list (first second)
     */ 
 
-list_t filteroddHelper(list_t list);
+//list_t filteroddHelper(list_t list);
 list_t filter_odd(list_t list);
     /*
     // EFFECTS: returns a new list containing only the elements of the
@@ -63,7 +62,7 @@ list_t filter_odd(list_t list);
     // you would get the list ( 1 3 )
     */ 
 
-list_t filterevenHelper(list_t list);
+//list_t filterevenHelper(list_t list);
 list_t filter_even(list_t list);
     /*
     // EFFECTS: returns a new list containing only the elements of the
