@@ -39,8 +39,20 @@ int main () {
   std::cout << "Difference 2: ";
   list_print(difference2);
 
-
+  int collision = countCollisions(newHash);
+  int oldCol = countCollisions(output);
+  int col2 = countCollisions(newHash2);
+  int oldCol2 = countCollisions(output2);
+  std::cout << "---Collision Count---" << "\n";
+  std::cout << "--Hash #1--" << "\n";
+  std::cout << "new_code: " << col << "\n";
+  std::cout << "old_code: " << oldCol << "\n";
+  std::cout << "--Hash #2--" << "\n";
+  std::cout << "new_code: " << col2 << "\n";
+  std::cout << "old_code: " << oldCol2 << "\n";
+  return 0;
 }
+
 // * * * * * F U N C T I O N S * * * * *
 
 void userInput (list_t &list) {
@@ -130,7 +142,20 @@ bool isPrime(int num) {
   return flag;
 }
 
-
+int countCollisions(list_t list) {
+  std::unordered_set<int> uSet;
+  int output = 0;
+  while (!list_isEmpty(list)) {
+    if (uSet.find(list_first(list)) == uSet.end()) {
+      uSet.insert(list_first(list));
+    }
+    else {
+      output += 1;
+    }
+    list = list_rest(list);
+  }
+  return output;
+}
 
 
 
