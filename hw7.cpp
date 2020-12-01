@@ -16,10 +16,6 @@ int main () {
   list_t output = list_make();
   list_t newHash = hashOne(input);
   list_t difference = subtractOneTwo(newHash, output);
-  list_t input2 = list_make();
-  list_t output2 = list_make();
-  list_t newHash2 = hashTwo(input2);
-  list_t difference2 = subtractOneTwo(newHash2, output2);
 
   std::cout<< "New user hash input: ";
   userInput(input);
@@ -35,16 +31,21 @@ int main () {
   list_print(difference);
   std::cout << "\n";
 
+  list_t input2 = list_make();
+  list_t output2 = list_make();
+  list_t newHash2 = hashTwo(input2);
+  list_t difference2 = subtractOneTwo(newHash2, output2);
+
   std::cout << "New user hash input 2: ";
   userInput(input2);
 
   std::cout << "Old user hash output 2: ";
   userInput(output2);
-
+  
   std::cout << "New user hash keys 2: ";
   list_print(newHash2);
   std::cout << "\n";
-  
+
   std::cout << "Difference 2: ";
   list_print(difference2);
   std:: cout << "\n";
@@ -82,6 +83,7 @@ list_t hashOne(list_t list) {
   while(!list_isEmpty(list)) {
     int newHashKey = fib(list_first(list)) + sumList;
     newHashList = list_make(newHashKey, newHashList);
+    list = list_rest(list);
   }
   return reverse(newHashList);
 }
