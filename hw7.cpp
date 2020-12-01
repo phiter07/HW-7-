@@ -57,6 +57,22 @@ void userInput (list_t &list) {
 list_t hashOne(list_t list) {
   list_t newHashList = list_make ();
   int sumList = sum(list);
+  while(!list_isEmpty(list)) {
+    int newHashKey = fib(list_first(list)) + sumList;
+    newHashList = list_make(newHashKey, newHashList);
+  }
+  return reverse(newHashList);
+}
+
+list_t subtractOneTwo (list_t list_1, list_t list_2) {
+  list_t output = list_make();
+  while(!list_isEmpty(list_1) && !list_isEmpty(list_2)) {
+    int absSub = abs(list_first(list_1) - list_first(list_2));
+    output = list_make(absSub, output);
+    list_1 = list_rest(list_1);
+    list_2 = list_rest(list_2);
+  }
+  return reverse(output);
 }
 
 
