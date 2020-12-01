@@ -75,6 +75,44 @@ list_t subtractOneTwo (list_t list_1, list_t list_2) {
   return reverse(output);
 }
 
+list_t hashTwo (list_t list) {
+  list_t output = list_make();
+  list_t temp = filter_odd(list);
+  list_t hashOdd = list_make();
+  int oddProd = product(temp);
+  int ctr = 0;
+  while (!list_isEmpty(temp)) {
+    int newHashKey = oddProd + list_first(temp);
+    hashOdd = list_make(newHashKey, hashOdd);
+    temp = list_rest(temp);
+    ctr++;
+  }
+  if(!list_isEmpty(hashOdd)) {
+    while (ctr > 0) {
+      if (isPrime(list_first(hashOdd))) {
+        hashOdd = list_rest(hashOdd);
+      }
+      hashOdd = rotate (hashOdd, 1);
+      ctr --;
+    }
+  }
+  int sumOdd = 0;
+  if(!list_isEmpty(hashOdd)) {
+    sumOdd=sum(hashOdd);
+  }
+  while (!list_isEmpty(list)) {
+    if (list_first(list) % 2 != 0) {
+      int newHashKey = oddProd + list_first(list);
+      output = list_make(newHashKey, output);
+    }
+    else {
+      int newHashKey = sumOdd + list_first(list);
+      output = list_make(newHashKey, output);
+    }
+    list = list_rest(list);
+  }
+  return reverse(output);
+}
 
 
 
