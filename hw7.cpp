@@ -1,3 +1,28 @@
+/* * * PSEUDOCODE * * *
+Void function userInput();
+  Takes input from user list_t
+
+list_t hashOne function
+  Initialize newHashList
+  Initialize sumList
+  while(list is not empty)
+    int newHashkey is assigned to fib(list_first + sumList)
+    newHashList is assigned to list_make(newHashkey, newHashList)
+    list is assigned to list_rest(temp)
+    list is assigned to reverse(newHashList)
+
+list_t subtractOneTwo function
+  Initialize output
+  while (list is not empty(list1) AND list is not empty(list2))
+    int absSub assigned to abs(list_1 - list_2)
+    assign output to (absSub, output)
+    list_1 is assigned to list_rest(list_1)
+    list_2 is assigned to list_rest(list_2)
+
+l
+
+
+*/
 #include <iostream>
 #include <sstream>
 #include "recursive.h"
