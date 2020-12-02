@@ -122,16 +122,17 @@ int main () {
   list_print(difference2);
   std:: cout << "\n";
 
-  int collision = countCollisions(newHash);
-  int oldCol = countCollisions(output);
-  int col2 = countCollisions(newHash2);
-  int oldCol2 = countCollisions(output2);
   std::cout << "- * - * - Collision Count - * - * -" << "\n";
   std::cout << "- - Hash #1 - -" << "\n";
+
+  int collision = countCollisions(newHash);
   std::cout << "new_code: " << collision << "\n";
+  int oldCol = countCollisions(output);
   std::cout << "old_code: " << oldCol << "\n";
   std::cout << "- - Hash #2 - -" << "\n";
+  int col2 = countCollisions(newHash2);
   std::cout << "new_code2: " << col2 << "\n";
+  int oldCol2 = countCollisions(output2);
   std::cout << "old_code2: " << oldCol2 << "\n";
   return 0;
 }
@@ -238,94 +239,3 @@ int countCollisions(list_t list) {
   }
   return output;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-using namespace std;
-
-
-list_t subtract(list_t, list_t, list_t);
-
-class HashTest {
-  public:
-    list_t hash_test1(list_t, list_t);
-    list_t hash_test2(list_t, list_t);
-    list_t subtract(list_t, list_t, list_t);
-};
-
-HashTest fib_sum_hash, even_or_odd_hash, old_collisions_hash, subtract_list;
-
-int old_hash1_ints, old_hash2_ints;
-
-int main() {
-  list_t oldList = list_make();
-  list_t oldList2 = list_make();
-  list_t readInput = list_make();
-  list_t fibHash = list_make();
-  list_t fibSum = list_make();
-  list_t alreadyHashed = list_make();
-  list_t finalEvenOdd = list_make();
-  list_t diffTwo = list_make();
-
-  for (int i = 1; i <=6; i++) {
-    std:: cin >> old_hash1_ints;
-    oldList = list_make(old_hash1_ints, oldList);
-  }
-
-  oldList = reverse(oldList);
-  cout << "old_hash_output";
-  list_print(oldList);
-
-  cout << endl;
-
-  for (int i =1; i <= 6; i++) {
-    readInput = list_make(i, readInput);
-  }
-
-  readInput = reverse(readInput);
-
-  fibSum = fib_sum_hash.hash_test1(oldList, readInput);
-
-  diffTwo = subtract(fibSum, oldList, diffTwo);
-  cout << "final_diff_output: ";
-  diffTwo = reverse(diffTwo);
-  list_print(diffTwo);
-  cout << endl;
-
-  // * * * T E S T 2 * * *  
-
-  for (int i = 1; <= i <= 6; i++) {
-    std::cin >> old_hash2_ints;
-    oldList2 = list_make(old_hash2_ints, oldList2);
-  }
-
-  oldList = reverse(oldList2);
-  std::cout<< "old output";
-  list_print(oldList);
-  std::cout << "\n";
-
-  finalEvenOdd = even_or_odd_hash.hash_test2(oldList, readInput);
-
-
-}
-*/
