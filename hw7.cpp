@@ -19,9 +19,57 @@ list_t subtractOneTwo function
     list_1 is assigned to list_rest(list_1)
     list_2 is assigned to list_rest(list_2)
 
-l
+list_t hashTwo
+  initialize output
+  initialize temp to filter_odd(list)
+  initialize hashOdd 
+  int oddProd is assigned to product(temp)
+  initialize ctr to 0
+  while (list is not empty(temp)
+    int newHashKey is assigned to oddProd + list_first(temp)
+    hashOdd is assigned to list_make(newHashkey, hashOdd)
+    temp is assigned to list_rest(temp)
+    ctr is increased by 1
+  if (list is not empty(hashOdd))
+    while(ctr is greater than 0)
+      if (isPrime(list_first(hashOdd)))
+        hashOdd is assigned to list_rest(hashOdd)
+      hashOdd is assigned to rotate (hashOdd, 1)
+      ctr is then decreased by 1
+  int sumOdd is assigned to 0
+  if(list is not empty(hashOdd)
+    sumOdd is assigned to sum(hashOdd)
+    while (list is not empty(list))
+      if(list_first(list) mod 2 not equal to 0)
+        int newHashKey is assigned to oddProd _ list_first(list)
+        output is assigned to list_make(newHashKey, output)
+      else
+        int newHashKey is assigned to sumOdd plus list_first(list)
+        output is assigned to list_make(newHashKey,output)
+      list is assigned to list_rest(list)
+    return the reverse(output)
 
+bool isPrime function
+  bool flag is assigned to true
+  if (num is equal to 0 OR num equal to 1)
+    flag is assigned to false
+  else
+    for(int i assigned to 2; i less than or equl to num/2; increase i by 1)
+      if(num mod i equal to 0)
+        flag is assigned to false
+        break
+  return flag
 
+int countCollisions function
+  Initialize undordered set
+  int output is assigned to 0
+  while(list is not empty)
+    if(unordered set is equal to uSet.end())
+      insert
+    else
+      output is plus or equal to 1
+    list is assigned to list_rest(list)
+  return output
 */
 #include <iostream>
 #include <sstream>
@@ -78,18 +126,16 @@ int main () {
   int oldCol = countCollisions(output);
   int col2 = countCollisions(newHash2);
   int oldCol2 = countCollisions(output2);
-  std::cout << "---Collision Count---" << "\n";
-  std::cout << "--Hash #1--" << "\n";
+  std::cout << "- * - * - Collision Count - * - * -" << "\n";
+  std::cout << "- - Hash #1 - -" << "\n";
   std::cout << "new_code: " << collision << "\n";
   std::cout << "old_code: " << oldCol << "\n";
-  std::cout << "--Hash #2--" << "\n";
-  std::cout << "new_code: " << col2 << "\n";
-  std::cout << "old_code: " << oldCol2 << "\n";
+  std::cout << "- - Hash #2 - -" << "\n";
+  std::cout << "new_code2: " << col2 << "\n";
+  std::cout << "old_code2: " << oldCol2 << "\n";
   return 0;
 }
-
 // * * * * * F U N C T I O N S * * * * *
-
 void userInput (list_t &list) {
   std::string input = "";
   int num = 0;
