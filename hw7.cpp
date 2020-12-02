@@ -1,6 +1,6 @@
 #include <iostream>
 #include <sstream>
-//#include "recursive.h"
+#include "recursive.h"
 #include "hw4.h"
 #include <unordered_set> 
 
@@ -14,12 +14,8 @@ int countCollisions(list_t list);
 int main () {
   list_t input = list_make();
   list_t output = list_make();
-
-
   list_t input2 = list_make();
   list_t output2 = list_make();
-
-
 
   std::cout<< "New user hash input: ";
   userInput(input);
@@ -86,6 +82,7 @@ list_t hashOne(list_t list) {
   while(!list_isEmpty(list)) {
     int newHashKey = fib(list_first(list)) + sumList;
     newHashList = list_make(newHashKey, newHashList);
+    list = list_rest(list);
   }
   return reverse(newHashList);
 }
